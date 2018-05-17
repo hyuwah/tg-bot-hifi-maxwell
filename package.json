@@ -1,0 +1,14 @@
+{
+  "name": "tg-bot-hifi-maxwell",
+  "version": "1.0.0",
+  "description": "HLSH Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muhammad Wahyudin",
+  "license": "ISC",
+  "dependencies": {
+    "telebot": "^1.2.6"
+  }
+}
