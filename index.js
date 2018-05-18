@@ -24,7 +24,9 @@ bot.on(['/start'], (msg) => msg.reply.text('Welcome! @'+ msg.from.username ));
 bot.on('/hello', (msg) => msg.reply.text('Hello @'+msg.from.username));
 
 bot.on('/info', (msg, chat) => {
-    let message = `
+
+    try {
+        let message = `
     Assalammu'alaykum, Salam Sejahtera untuk kita semua
 
     ❖ Grup ini adalah salah satu media yang akan kita gunakan untuk *sharing, learning and transfering knowledge* antaranggota maupun alumni HIFI Unpad
@@ -68,6 +70,10 @@ bot.on('/info', (msg, chat) => {
 
     let registerMessage = `Pastikan isi [form informasi anggota](http://bit.ly/hlsh-reg-form) dulu ya :)`;
     bot.sendMessage(msg.from.id, registerMessage, {parseMode:"Markdown"});
+    } catch (error) {
+        return msg.reply.text(`Ups, ${msg.from.username} harus buka @maxwell_hifi_bot dan klik start dulu sebelum bisa menggunakan commands~`);
+    }
+    
 });
 
 bot.start();
