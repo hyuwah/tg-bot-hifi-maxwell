@@ -75,7 +75,9 @@ bot.on('/info', (msg, chat) => {
         return msg.reply.text(`Ups, ${msg.from.username} harus buka @maxwell_hifi_bot dan klik start dulu sebelum bisa menggunakan commands~`);
     }
     
-    bot.on('/versi', (msg) => msg.reply.text(`Maxwell v${version}`))
 });
+
+bot.on('/versi', (msg) => msg.reply.text(`Maxwell v${version}`))
+
 
 bot.start();
