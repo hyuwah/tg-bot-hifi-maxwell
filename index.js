@@ -1,6 +1,5 @@
 const TeleBot = require('telebot');
-// const bot = new TeleBot(process.env.apikey)
-const bot = new TeleBot('***REMOVED***')
+const bot = new TeleBot(process.env.apikey)
 
 
 bot.on('newChatMembers', (msg) => {
