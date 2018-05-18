@@ -1,10 +1,9 @@
 const TeleBot = require('telebot');
 const bot = new TeleBot(process.env.apikey)
 
+// Events
 
 bot.on('newChatMembers', (msg) => {
-
-    
 
     let newUser = msg.new_chat_members[0];
 
@@ -18,7 +17,12 @@ bot.on('newChatMembers', (msg) => {
 });
 
 
-bot.on(['/start', '/hello'], (msg) => msg.reply.text('Welcome! @'+ msg.from.username ));
+// Commands
+
+bot.on(['/start'], (msg) => msg.reply.text('Welcome! @'+ msg.from.username ));
+
+bot.on('/hello', (msg) => msg.reply.text('Hello @'+msg.from.username));
+
 bot.on('/info', (msg, chat) => {
     let message = `
     Assalammu'alaykum, Salam Sejahtera untuk kita semua
@@ -64,6 +68,6 @@ bot.on('/info', (msg, chat) => {
 
     let registerMessage = `Pastikan isi [form informasi anggota](http://bit.ly/hlsh-reg-form) dulu ya :)`;
     bot.sendMessage(msg.from.id, registerMessage, {parseMode:"Markdown"});
-    // return msg.reply.text(message);
 });
+
 bot.start();
